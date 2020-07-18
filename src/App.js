@@ -1,10 +1,13 @@
 import React from 'react';
 import './App.css';
+import Header from './components/HeaderComponent/Header'
+import Search from './components/SearchComponent/Search'
 
 function App() {
   return (
     <div className="App">
-      <h1>Employee Directory</h1>
+    <Header/>
+    <Search/>
     </div>
   );
 }
