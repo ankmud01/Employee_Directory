@@ -2,43 +2,30 @@ import React from 'react';
 import './Search.css';
 
 export default function search(props) {
+    console.log(props);
   return (
     <div className='container'>
       <form className='form'>
         <div className='row'>
-          <div className='col-4'>
+          <div className='col-6'>
             <input
-              onChange={props.handleEmailChange}
+              onChange={props.handleEmailSearch}
               className='form-control mr-lg-2'
               name='emailSearch'
               type='search'
               placeholder='Search by Email'
-              value={props.emailSearch}
+              value={props.value}
             />
           </div>
-          <div className='col-2'>
-            <button type='button' className='btn btn-primary'>
-              Search
-            </button>
-          </div>
-          <div className='col-4'>
+          <div className='col-6'>
             <input
-              onChange={props.handleDeptChange}
+              onChange={props.handleDeptSearch}
               className='form-control mr-lg-2'
-              name='emailSearch'
+              name='deptSearch'
               type='search'
               placeholder='Search by Department'
               aria-label='Search'
             />
-          </div>
-          <div className='col-2'>
-            <button
-              type='button'
-              className='btn btn-primary'
-              value={props.deptSearch}
-            >
-              Search
-            </button>
           </div>
         </div>
       </form>
