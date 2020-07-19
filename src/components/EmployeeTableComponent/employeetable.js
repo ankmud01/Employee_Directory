@@ -8,8 +8,8 @@ export default function employeetable(props) {
           <thead className='thead-dark'>
             <tr>
               <th scope='col'>Pic</th>
-              <th scope='col' ><i className="material-icons">swap_vert</i>FirstName</th>
-              <th scope='col'><i className='material-icons'>swap_vert</i>LastName</th>
+              <th scope='col' onClick={props.sortByFirstname} ><i className="material-icons">swap_vert</i>FirstName</th>
+              <th scope='col' onClick={props.sortByLastname}><i className='material-icons'>swap_vert</i>LastName</th>
               <th scope='col'>Email</th>
               <th scope='col'>PhoneNumber</th>
               <th scope='col'>Department</th>
