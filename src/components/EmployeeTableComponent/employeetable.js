@@ -1,4 +1,5 @@
 import React from 'react';
+import './employeetable.css';
 
 export default function employeetable(props) {
   return (

@@ -1,0 +1,9 @@
+.navbar{
+    font-family: 'Times New Roman', Times, serif;
+    display: block;
+}
+
+.navbar-brand{
+    font-weight: bolder;
+    font-size: 3rem;
+}
