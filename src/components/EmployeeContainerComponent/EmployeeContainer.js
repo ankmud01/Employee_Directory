@@ -5,25 +5,38 @@ import employees from '../../utils/employee.json';
 
 export default class EmployeeContainer extends Component {
   state = {
-    // Picure: '1',
-    // FirstName: 'Ankit',
-    // LastName: 'Mudvari',
-    // Email: 'ankmud01@gmail.com',
-    // PhoneNumber: '120-456-7891',
-    // Department: 'Information Technology',
-    // Manager: 'John Kim',
     employees,
+    deptSearch: '',
+    emailSearch: ''
+  };
+
+  handleDeptChange = (event) => {
+    event.preventDefault();
+    console.log(event.target.name);
+  };
+
+  handleEmailChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    this.setState({
+        [name]: value
+    })
+    console.log(value)
   };
 
   render() {
     return (
       <div>
         <Header />
-        <Search />
+        <Search 
+        search={this.state.search}
+        handleSearchbyDept={this.handleSearchbyDept}
+        handleSearchbyEmail={this.handleSearchbyEmail}
+        />
         <div className='jumbotron'>
           <h3>List of Employees</h3>
-          <table class='table'>
-            <thead class='thead-dark'>
+          <table className='table'>
+            <thead className='thead-dark'>
               <tr>
                 <th scope='col'>Pic</th>
                 <th scope='col'>FirstName</th>
@@ -35,9 +48,11 @@ export default class EmployeeContainer extends Component {
               </tr>
             </thead>
             <tbody>
-              {this.state.employees.map(employee => (
+              {this.state.employees.map((employee) => (
                 <tr>
-                  <td><img alt={employee.firstName} src = {employee.picture} /></td>
+                  <td>
+                    <img alt={employee.firstName} src={employee.picture} />
+                  </td>
                   <td>{employee.firstName}</td>
                   <td>{employee.lastName}</td>
                   <td>{employee.email}</td>
