@@ -7,7 +7,6 @@ import EmployeeTable from '../EmployeeTableComponent/employeetable';
 export default class EmployeeContainer extends Component {
   state = {
     employees,
-    deptSearch: [],
     searchEmployees: [],
   };
 
@@ -18,16 +17,27 @@ export default class EmployeeContainer extends Component {
   }
 
   handleDeptSearch = (event) => {
-    event.preventDefault();
-    console.log(event.target.name);
+    let value = event.target.value;
+    const myEmployees = [...employees];
+    // console.log(myEmployees);
+
+    let searchEmployees = myEmployees.filter((employee) =>
+      employee.department.toLowerCase().includes(value.toLowerCase())
+    );
+
+    this.setState(
+      {
+        ...this.state,
+        searchEmployees,
+      },
+      console.log('State', this.state)
+    );
   };
 
   handleEmailSearch = (event) => {
-    console.log(event.target.value);
     let value = event.target.value;
     const myEmployees = [...employees];
-    console.log(myEmployees);
-    // this.state.employees;
+    // console.log(myEmployees);
 
     let searchEmployees = myEmployees.filter((employee) =>
       employee.email.toLowerCase().includes(value.toLowerCase())

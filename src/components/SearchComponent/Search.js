@@ -2,7 +2,6 @@ import React from 'react';
 import './Search.css';
 
 export default function search(props) {
-    console.log(props);
   return (
     <div className='container'>
       <form className='form'>
@@ -24,7 +23,7 @@ export default function search(props) {
               name='deptSearch'
               type='search'
               placeholder='Search by Department'
-              aria-label='Search'
+              value={props.value}
             />
           </div>
         </div>
